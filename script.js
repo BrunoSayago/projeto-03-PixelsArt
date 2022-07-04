@@ -35,14 +35,16 @@ function pintaPixel(evento) {
   pixel.style.backgroundColor = corSelecionada;
 }
 
-const pixels = document.getElementsByClassName('pixel');
-
-for (let index = 0; index < pixels.length; index += 1) {
-  pixels[index].addEventListener('click', pintaPixel);
+function ativaPintura() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', pintaPixel);
+  }
 }
 
 // Botão Limpar
 function retornaCorInicial() {
+  const pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
@@ -80,6 +82,15 @@ function criaPixels(numA) {
   }
 }
 
+function validaNumero(numA) {
+  if (numA < 5) {
+    return 5;
+  } if (numA > 50) {
+    return 50;
+  }
+  return numA;
+}
+
 function mudaTamanhoPixels() {
   const input = document.getElementById('board-size').value;
   const inputNum = parseInt(input, 10);
@@ -87,15 +98,38 @@ function mudaTamanhoPixels() {
     alert('Board Inválido!');
   } else {
     apagaPixels();
-    criaLinhas(inputNum);
-    criaPixels(inputNum);
+    criaLinhas(validaNumero(inputNum));
+    criaPixels(validaNumero(inputNum));
   }
+  ativaPintura();
 }
 
 const botaoTamanho = document.getElementById('generate-board');
 botaoTamanho.addEventListener('click', mudaTamanhoPixels);
 
+function rndRGB() {
+  return Math.floor(Math.random() * 256);
+}
+
+function geraStringRGB() {
+  const stringRGB = `rgb(${rndRGB()}, ${rndRGB()}, ${rndRGB()})`;
+  return stringRGB;
+}
+
+function rndColors() {
+  const coresAleatorias = document.getElementsByClassName('random');
+  for (let index = 0; index < coresAleatorias.length; index += 1) {
+    coresAleatorias[index].style.backgroundColor = geraStringRGB();
+  }
+}
+
 // Função Inicial
 function carregamentoInicial() {
   selecionaCorInicial();
+  ativaPintura();
+  rndColors();
 }
+
+window.onload = () => {
+  carregamentoInicial();
+};
