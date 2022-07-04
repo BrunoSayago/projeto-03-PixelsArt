@@ -7,18 +7,26 @@
 }
 
 .black {
-    background-color: black;
+  background-color: black;
 }
 
 .vivid-blue {
-    background-color: rgb(26, 200, 237);
+  background-color: rgb(26, 200, 237);
 }
 
 .blue-green {
-    background-color: rgb(132, 220, 207);
+  background-color: rgb(132, 220, 207);
 }
 
 .fiery-rose {
-    background-color: rgb(239, 98, 108);
+  background-color: rgb(239, 98, 108);
 }
 
+/* Pixel Board */
+.pixel {
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  background-color: white;
+}
