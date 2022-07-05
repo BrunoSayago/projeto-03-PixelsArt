@@ -92,7 +92,7 @@ function validaNumero(numA) {
 }
 
 function mudaTamanhoPixels() {
-  const input = document.getElementById('board-size').value;
+  let input = document.getElementById('board-size').value;
   const inputNum = parseInt(input, 10);
   if (input === '') {
     alert('Board Inválido!');
@@ -102,6 +102,7 @@ function mudaTamanhoPixels() {
     criaPixels(validaNumero(inputNum));
   }
   ativaPintura();
+  document.getElementById('board-size').value = '';
 }
 
 const botaoTamanho = document.getElementById('generate-board');

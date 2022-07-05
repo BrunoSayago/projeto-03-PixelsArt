@@ -1,9 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+  background-color: rgb(204, 204, 204);
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  background-color: rgb(204, 204, 204);
+}
+
+h1 {
+  padding: 30px 0;
+}
+
+/* Seção 1 */
+#cores-e-botoes {
+  text-align: center;
+  background-color: rgb(127, 127, 127);
+}
+
 /* Box Cores */
 .color {
   display: inline-block;
   border: 1px solid black;
+  border-radius: 10px;
   height: 5em;
   width: 5em;
+  margin: 10px 0 5px;
 }
 
 .color:hover {
@@ -14,7 +44,24 @@
   background-color: black;
 }
 
+/* Input e Botao Input */
+#input-e-botao {
+  margin: 5px 0;
+}
+
+/* Botao Limpar */
+#clear-board {
+  margin: 5px 0;
+}
+
 /* Pixel Board */
+#pixel-board {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin: 10px 0;
+}
+
 .pixel {
   box-sizing: content-box;
   border: 1px solid black;
@@ -26,10 +73,16 @@
   margin: 0;
 }
 
+.pixel:hover {
+  cursor: pointer;
+}
+
 .linha {
   width: fit-content;
   line-height: 0;
   margin: 0;
   padding: 0;
   border: 0;
+  vertical-align: middle;
+  text-align: center;
 }
