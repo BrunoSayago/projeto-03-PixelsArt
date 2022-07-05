@@ -92,7 +92,7 @@ function validaNumero(numA) {
 }
 
 function mudaTamanhoPixels() {
-  let input = document.getElementById('board-size').value;
+  const input = document.getElementById('board-size').value;
   const inputNum = parseInt(input, 10);
   if (input === '') {
     alert('Board Inválido!');
